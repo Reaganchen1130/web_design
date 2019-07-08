@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+{{-- 定義 content section 的內容 --}}
 @section('content')
+
 <div class="container">
     <div class="row justify-content">
-        @include('layouts.product_sidebar')
+        @include('layouts.test')
         <div class="col-md-8">
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,3 +45,4 @@
     </div>
 </div>
 @endsection
+
