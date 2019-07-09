@@ -19,4 +19,10 @@ class ProductController extends Controller
         $this->product->addProduct($request);
         return redirect('admin/dashboard')->with(['flash_message'=>'商品新增成功！']);
     }
+    public function showList()
+    {
+        $list=new ProductRepository;
+        $list=$list->getAll();
+        return view('product.list_product')->with(['list'=>$list]);
+    }
 }
