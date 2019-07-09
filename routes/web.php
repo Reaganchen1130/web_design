@@ -24,3 +24,6 @@ Route::get('user_password',function(){
     return view('member.password_verify');
 });
 Route::put('user_password','UserController@password');
+Route::get('1',function(){
+    return view('test');
+});
