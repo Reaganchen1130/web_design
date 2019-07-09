@@ -26,7 +26,6 @@ class AddProduct extends FormRequest
         return [
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string',
-            'photo' => 'required|string',
             'brand' => 'required|string',
             'type' => 'required|string',
             'number' => 'required|string',

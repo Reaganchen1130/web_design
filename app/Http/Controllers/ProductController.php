@@ -17,6 +17,6 @@ class ProductController extends Controller
     public function addProduct(AddProduct $request)
     {
         $this->product->addProduct($request);
-        return redirect('admin/dashboard');
+        return redirect('admin/dashboard')->with(['flash_message'=>'商品新增成功！']);
     }
 }
