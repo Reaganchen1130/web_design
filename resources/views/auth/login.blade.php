@@ -13,10 +13,9 @@
 
                         <div class="form-group row">
                             <label for="acoount" class="col-md-4 col-form-label text-md-right">{{ __('Acoount') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="acoount" value="{{ old('acoount') }}" required autocomplete="acoount" autofocus>
-                            </div>
+                        <div class="col-md-6">
+                            <input id="acoount" type="acoount" class="form-control " name="account" required autocomplete="current-password">
+                        </div>
                         </div>
 
                         <div class="form-group row">
