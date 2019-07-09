@@ -6,7 +6,7 @@
         @include('layouts.member_sidebar')
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('資料修改') }}</div>
                 <div class="card-body">
                     <form method="POST" action="user">
                         @method('put')
