@@ -20,3 +20,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user', 'UserController@select');
 Route::put('user','UserController@update');
+Route::get('user_password',function(){
+    return view('member.password_verify');
+});
+Route::put('user_password','UserController@password');
+
+Route::get('product',function(){
+    return view('product.test');
+});
+
+Route::post('product','ProductController@addProduct');

@@ -18,5 +18,5 @@ class UserRepository
     {
         return $this->UserRepository->where('account',auth()->user()->account)->first();
     }
-    
+
 }

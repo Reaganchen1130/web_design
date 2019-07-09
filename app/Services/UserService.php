@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
@@ -27,5 +28,21 @@ class UserService
         $verify->cellphone=$request->input('cellphone');
         $verify->address=$request->input('address');
         $verify->save();
+    }
+    public function password($request)
+    {
+        if (auth()->check()) {
+            $current_password = auth()->user()->password;
+            if (Hash::check($request->current_password, $current_password)) {
+                $user = $this->UserService->select();
+                $user->password = Hash::make($request->input('password'));
+                $user->save();
+                $flash_message='密碼修該成功！';
+                return $flash_message;
+            } else {
+                $flash_message='密碼修改失敗！';
+                return $flash_message;
+            }
+        } 
     }
 }

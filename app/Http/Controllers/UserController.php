@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\UserVerify;
 use App\Services\UserService;
 use App\User;
@@ -25,6 +26,11 @@ class UserController extends Controller
     public function update(UserVerify $request)
     {
         $this->user->update($request);
-        return redirect('/home')->with(['flash_message' => '資料修改成功 !!',]);
+        return redirect('/home')->with(['flash_message' => '資料修改成功 !!']);
+    }
+    public function password(Request $request)
+    {
+        $flash_message=$this->user->password($request);
+        return redirect('/home')->with(['flash_message'=>$flash_message]);
     }
 }
