@@ -25,9 +25,9 @@ class UserVerify extends FormRequest
     {
         return [
             'name' => 'required|max:255|string',
-            'email' => 'required|email|string', 
-            'cellphone'=> 'required|max:10|string',
-            'address'=> 'required|string',         
+            'email' => 'required|email|string',
+            'cellphone' => 'required|max:10|string',
+            'address' => 'required|string|min:10',
         ];
     }
 }

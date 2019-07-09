@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row justify-content">
         @include('layouts.member_sidebar')
-
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -26,7 +25,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="email"
                                 class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -42,7 +41,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="cellphone"
                                 class="col-md-4 col-form-label text-md-right">{{ __('Cellphone') }}</label>
@@ -73,7 +72,17 @@
                     </form>
                 </div>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         </div>
+
     </div>
 </div>
 @endsection

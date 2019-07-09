@@ -9,7 +9,7 @@
                         會員資料
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">資料修改</a>
+                        <a class="dropdown-item" href="user">資料修改</a>
                         <a class="dropdown-item" href="#">密碼修改</a>
                     </div>
                 </li>
