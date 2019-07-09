@@ -26,7 +26,7 @@ Route::get('user_password',function(){
 Route::put('user_password','UserController@password');
 
 Route::get('product',function(){
-    return view('product.test');
+    return view('product.add_product');
 });
 
 Route::post('product','ProductController@addProduct');

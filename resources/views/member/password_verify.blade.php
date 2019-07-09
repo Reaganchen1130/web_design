@@ -17,8 +17,8 @@
 
                             <div class="col-md-6">
                                 <input id="current_password" type="password"
-                                    class="form-control @error('current_password') is-invalid @enderror" name="current_password"
-                                    required autocomplete="current_password">
+                                    class="form-control @error('current_password') is-invalid @enderror"
+                                    name="current_password" required autocomplete="current_password">
                             </div>
                         </div>
 
@@ -60,6 +60,7 @@
             </div>
             @if ($errors->any())
             <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <ul>
                     @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
