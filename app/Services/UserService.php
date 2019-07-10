@@ -45,4 +45,8 @@ class UserService
             }
         } 
     }
+    public function deleteUser($id)
+    {   
+        return $this->UserService->deleteUser($id);
+    }
 }

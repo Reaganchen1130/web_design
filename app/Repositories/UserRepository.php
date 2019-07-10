@@ -18,5 +18,8 @@ class UserRepository
     {
         return $this->UserRepository->where('account',auth()->user()->account)->first();
     }
-
+    public function deleteUser($id)
+    {
+        $this->UserRepository->where('id',$id)->delete();
+    }
 }

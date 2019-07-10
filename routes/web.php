@@ -36,3 +36,5 @@ Route::get('admin/product/list/{id?}','ProductController@deleteProduct');
 Route::get('admin/product/list/edit/{id?}','ProductController@editShow');
 Route::put('admin/product/list/edit/{id?}','ProductController@editProduct')->name('editproduct');
 
+Route::get('admin/user/list','UserController@index')->name('showuser');
+Route::get('admin/user/list/{id?}','UserController@deleteUser')->name('deleteuser');

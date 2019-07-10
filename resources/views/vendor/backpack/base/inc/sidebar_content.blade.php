@@ -9,10 +9,8 @@
 <li class="treeview">
         <a href="#"><i class="fa fa-user"></i> <span>User</span> </a>
         <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-user"></i>
-                                <span>{{ trans('user.users') }}</span></a></li>
-                <li><a href="#"><i class="fa fa-group"></i>
-                                <span>Roles</span></a></li>
+                <li><a href="{{route('showuser')}}"><i class="fa fa-group"></i>
+                                <span>show user</span></a></li>
                 <li><a href="#"><i class="fa fa-key"></i>
                                 <span>Permissions</span></a></li>
         </ul>
