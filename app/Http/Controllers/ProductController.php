@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AddProduct;
 use App\Services\ProductService;
 use App\Repositories\ProductRepository;
 
@@ -13,9 +14,15 @@ class ProductController extends Controller
     {
         $this->product=new ProductService;
     }
-    public function addProduct(Request $request)
+    public function addProduct(AddProduct $request)
     {
         $this->product->addProduct($request);
-        return redirect('admin/dashboard');
+        return redirect('admin/dashboard')->with(['flash_message'=>'商品新增成功！']);
+    }
+    public function showList()
+    {
+        $list=new ProductRepository;
+        $list=$list->getAll();
+        return view('product.list_product')->with(['list'=>$list]);
     }
 }

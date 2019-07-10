@@ -11,4 +11,8 @@ class ProductRepository
     {
         $this->ProductRepository = new Product;
     }
+    public function getAll()
+    {
+        return $this->ProductRepository->get();
+    }
 }

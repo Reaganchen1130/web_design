@@ -20,11 +20,9 @@
 <li class="treeview">
         <a href="#"><i class="fas fa-folder"></i> <span>Product</span> </a>
         <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-plus"></i>
+                <li><a href="{{route('addproduct')}}"><i class="fa fa-plus"></i>
                                 <span>add product</span></a></li>
-                <li><a href="#"><i class="fa fa-trash"></i>
-                                <span>delete product</span></a></li>
-                <li><a href="#"><i class="fa fa-pen"></i>
-                                <span>edit product</span></a></li>
+                <li><a href="{{route('showproduct')}}"><i class="far fa-list-alt"></i>
+                                <span>show product</span></a></li>
         </ul>
 </li>

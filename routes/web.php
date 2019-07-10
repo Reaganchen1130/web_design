@@ -25,8 +25,10 @@ Route::get('user_password',function(){
 });
 Route::put('user_password','UserController@password');
 
-Route::get('product',function(){
-    return view('product.test');
+Route::get('admin/product',function(){
+    return view('product.add_product');
 });
 
-Route::post('product','ProductController@addProduct');
+Route::post('admin/product','ProductController@addProduct')->name('addproduct');
+Route::get('admin/product/list','ProductController@showList')->name('showproduct');
+Route::delete('admin/product/list','ProductController@delete')->name('deleteproduct');
