@@ -29,5 +29,6 @@ Route::get('admin/product',function(){
     return view('product.add_product');
 });
 
-Route::post('admin/product','ProductController@addProduct');
-Route::get('admin/product/list','ProductController@showList');
+Route::post('admin/product','ProductController@addProduct')->name('addproduct');
+Route::get('admin/product/list','ProductController@showList')->name('showproduct');
+Route::delete('admin/product/list','ProductController@delete')->name('deleteproduct');
