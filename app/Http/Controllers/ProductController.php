@@ -25,9 +25,20 @@ class ProductController extends Controller
         $list=$list->getAll();
         return view('product.list_product')->with(['list'=>$list]);
     }
-    public function delete($id)
+    public function deleteProduct($id)
     {
-        $this->product->delete($id);
+        $this->product->deleteProduct($id);
         return redirect('admin/product/list')->with(['flash_message'=>'商品刪除成功！']);
+    }
+    public function editShow($id)
+    {   
+        $data=new ProductRepository;
+        $data=$data->select($id);
+        return view('product.edit_product')->with(['data'=>$data]);
+    }
+    public function editProduct(Request $request)
+    {   
+        $this->product->editProduct($request);
+        return redirect('admin/product/list')->with(['flash_message'=>'商品修改成功！']);
     }
 }

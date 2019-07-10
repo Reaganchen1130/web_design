@@ -23,7 +23,7 @@
             <td>{{ $product->number }}</td>
             <td><a class="btn btn-outline-success" href="list/{{$product->id}}"><i class="fa fa-trash"></i>delete</a>
             </td>
-            <td><a class="btn btn-outline-success" href="#1"><i class="fa fa-pen"></i>edit</a></td>
+            <td><a class="btn btn-outline-success" href="list/edit/{{$product->id}}"><i class="fa fa-pen"></i>edit</a></td>
         </tr>
     </tbody>
     @endforeach

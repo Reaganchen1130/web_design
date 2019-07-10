@@ -15,6 +15,10 @@ class ProductRepository
     {
         return $this->ProductRepository->get();
     }
+    public function select($id)
+    {
+        return $this->getAll()->where('id',$id)->first();
+    }
     public function delete($id)
     {   
         $name=$this->ProductRepository->where('id', $id)->first();
@@ -22,6 +26,7 @@ class ProductRepository
         if (File::exists($image_path)) {
             File::delete($image_path);
         }
-        return $this->ProductRepository->where('id', $id);
+        return $this->ProductRepository->where('id', $id)->delete();
     }
+    
 }
