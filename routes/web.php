@@ -31,4 +31,4 @@ Route::get('admin/product',function(){
 
 Route::post('admin/product','ProductController@addProduct')->name('addproduct');
 Route::get('admin/product/list','ProductController@showList')->name('showproduct');
-Route::delete('admin/product/list','ProductController@delete')->name('deleteproduct');
+Route::get('admin/product/list/{id?}','ProductController@delete');

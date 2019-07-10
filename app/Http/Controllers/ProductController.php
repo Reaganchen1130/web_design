@@ -25,4 +25,9 @@ class ProductController extends Controller
         $list=$list->getAll();
         return view('product.list_product')->with(['list'=>$list]);
     }
+    public function delete($id)
+    {
+        $this->product->delete($id);
+        return redirect('admin/product/list')->with(['flash_message'=>'商品刪除成功！']);
+    }
 }

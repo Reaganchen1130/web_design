@@ -29,4 +29,8 @@ class ProductService
         }
         $product->save();
     }
+    public function delete($id)
+    {
+        $this->ProductService->delete($id);
+    }
 }
