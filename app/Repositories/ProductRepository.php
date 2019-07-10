@@ -3,9 +3,9 @@
 namespace App\Repositories;
 
 use App\Product;
-
+use Illuminate\Support\Facades\File;
 class ProductRepository
-{   
+{
     protected $ProductRepository;
     public function __construct()
     {
@@ -15,4 +15,18 @@ class ProductRepository
     {
         return $this->ProductRepository->get();
     }
+    public function select($id)
+    {
+        return $this->getAll()->where('id',$id)->first();
+    }
+    public function delete($id)
+    {   
+        $name=$this->ProductRepository->where('id', $id)->first();
+        $image_path='images'.'/'.$name->photo;
+        if (File::exists($image_path)) {
+            File::delete($image_path);
+        }
+        return $this->ProductRepository->where('id', $id)->delete();
+    }
+    
 }
